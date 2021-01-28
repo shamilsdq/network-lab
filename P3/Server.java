@@ -21,9 +21,14 @@ public class Server {
     }
 
     public void run() {
-        this.socket = serverSocket.accept();
-        System.out.println("Client connected");
-        this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        try {
+            this.socket = serverSocket.accept();
+            System.out.println("Client connected");
+            this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        } catch (Exception ex) {
+            System.out.println(ex);
+            return;
+        }
         String line;
         while (true) {
             try {
