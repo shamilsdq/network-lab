@@ -11,22 +11,22 @@ public class Server {
 
     public Server(int port) {
         try {
-            serverSocket = new ServerSocket(port);
+            this.serverSocket = new ServerSocket(port);
             System.out.println("Server started");
             System.out.println("Waiting connection request");
-            socket = serverSocket.accept();
-            System.out.println("Client connected");
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         } catch (Exception ex) {
             System.out.println(ex);
         }
     }
 
     public void run() {
+        this.socket = serverSocket.accept();
+        System.out.println("Client connected");
+        this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
         while (true) {
             try {
-                line = in.readLine();
+                line = this.in.readLine();
                 if (line == null) break;
                 System.out.println("CLIENT: " + line);
                 System.out.flush();

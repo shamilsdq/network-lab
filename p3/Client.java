@@ -11,10 +11,10 @@ public class Client {
 
     public Client(String address, int port) {
         try {
-            socket = new Socket(address, port);
+            this.socket = new Socket(address, port);
             System.out.println("Client started");
-            in = new Scanner(System.in);
-            out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+            this.in = new Scanner(System.in);
+            this.out = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
         } catch (Exception ex) {
             System.out.println(ex);
         }
@@ -25,10 +25,10 @@ public class Client {
         while (true) {
             try {
                 System.out.print("ME: ");
-                line = in.nextLine();
+                line = this.in.nextLine();
                 if (line == null || line.equals("EOT")) break;
-                out.write(line + '\n');
-                out.flush();
+                this.out.write(line + '\n');
+                this.out.flush();
             } catch (Exception ex) {
                 System.out.println(ex);
             }
