@@ -24,6 +24,7 @@ public class Client {
         String line;
         while (true) {
             try {
+                System.out.print("ME: ");
                 line = in.nextLine();
                 if (line == null || line.equals("EOT")) break;
                 out.write(line + '\n');

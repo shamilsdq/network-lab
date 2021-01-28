@@ -15,7 +15,7 @@ public class Server {
             System.out.println("Server started");
             System.out.println("Waiting connection request");
             socket = serverSocket.accept();
-            System.out.println("Client accepted");
+            System.out.println("Client connected");
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         } catch (Exception ex) {
             System.out.println(ex);
@@ -28,7 +28,7 @@ public class Server {
             try {
                 line = in.readLine();
                 if (line == null) break;
-                System.out.println(line);
+                System.out.println("CLIENT: " + line);
                 System.out.flush();
             } catch (Exception ex) {
                 System.out.println(ex);
