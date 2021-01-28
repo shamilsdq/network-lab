@@ -16,6 +16,7 @@ public class Server {
             System.out.println("Waiting connection request");
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -32,6 +33,7 @@ public class Server {
                 System.out.flush();
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }
@@ -42,6 +44,7 @@ public class Server {
             this.socket.close();
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 

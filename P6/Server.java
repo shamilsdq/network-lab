@@ -24,6 +24,7 @@ public class Server {
             System.out.println("Server started");
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -40,6 +41,7 @@ public class Server {
                 socket.send(new DatagramPacket(this.buffer, message.length(), this.address, this.port));
             } catch(Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }

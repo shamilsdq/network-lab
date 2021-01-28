@@ -20,6 +20,7 @@ public class Client {
             this.port = port;
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -33,6 +34,7 @@ public class Client {
                 socket.send(packet);
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
             if (message.equals("EOT")) break;
         }

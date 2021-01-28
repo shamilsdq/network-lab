@@ -24,6 +24,7 @@ public class Client {
             System.out.println("Client started");
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -40,6 +41,7 @@ public class Client {
                 System.out.println("SERVER: " + recievedMessage);
             } catch(Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }

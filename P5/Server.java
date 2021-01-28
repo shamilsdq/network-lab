@@ -22,6 +22,7 @@ public class Server {
             System.out.println("Server started");
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -48,6 +49,7 @@ public class Server {
                 this.messageSender.flush();
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }
@@ -61,6 +63,7 @@ public class Server {
             this.serverSocket.close();
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 

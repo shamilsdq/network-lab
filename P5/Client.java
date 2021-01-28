@@ -22,6 +22,7 @@ public class Client {
             this.messageSender = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -38,6 +39,7 @@ public class Client {
                 System.out.println("SERVER: " + recievedMessage);
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }
@@ -50,6 +52,7 @@ public class Client {
             this.socket.close();
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 

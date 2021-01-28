@@ -15,6 +15,7 @@ public class Server {
             System.out.println("Server started");
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -27,6 +28,7 @@ public class Server {
                 System.out.println("CLIENT: " + s);
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }

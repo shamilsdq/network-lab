@@ -17,6 +17,7 @@ public class Client {
             this.out = new BufferedWriter(new OutputStreamWriter(this.socket.getOutputStream()));
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
@@ -31,6 +32,7 @@ public class Client {
                 this.out.flush();
             } catch (Exception ex) {
                 System.out.println(ex);
+                return;
             }
         }
     }
@@ -42,6 +44,7 @@ public class Client {
             this.socket.close();
         } catch (Exception ex) {
             System.out.println(ex);
+            return;
         }
     }
 
